@@ -1,13 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>cssMemSlider</title>
-	<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cssMemSlider</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-	
+    <div class="slider">
+
+        <input type="radio" name="btn" id="switch1" checked>
+        <input type="radio" name="btn" id="switch2">
+        <input type="radio" name="btn" id="switch3">
+        <input type="radio" name="btn" id="switch4">
+
+        <div class="slider__switch">
+            <nav>
+                <label for="switch1"></label>
+                <label for="switch2"></label>
+                <label for="switch3"></label>
+                <label for="switch4"></label>
+            </nav>
+        </div>
+
+        <div class="slider__image-container">
+            <div class="image-container">
+                <article><img src="/cssMemSlider/assets/img/1.jpg" alt="mem" id="img-1" class="slider__mem"></article>
+                <article><img src="/cssMemSlider/assets/img/2.jpg" alt="mem" id="img-2" class="slider__mem"></article>
+                <article><img src="/cssMemSlider/assets/img/3.jpg" alt="mem" id="img-3" class="slider__mem"></article>
+                <article><img src="/cssMemSlider/assets/img/4.jpg" alt="mem" id="img-4" class="slider__mem"></article>
+            </div>
+        </div>
+
+
+
+        <div class="slider__text-container">
+            <div class="text-container">
+                <div class="text">
+                    <p>text1111text1111text1111text1111text1111</p>
+                </div>
+                <div class="text">
+                    <p>text2222text2222text2222text2222text2222</p>
+                </div>
+                <div class="text">
+                    <p>text3333text3333text3333text3333text3333</p>
+                </div>
+                <div class="text">
+                    <p>text4444text4444text4444text4444text4444</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </body>
+
 </html>
