@@ -1,0 +1,282 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 80vw;
+    background: #303030;
+    margin: 0 auto;
+}
+
+.hidden {
+    display: none;
+}
+
+.slider {
+    width: 80vw;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    transition: all .5s ease-in-out;
+}
+
+.info-container {
+    display: flex;
+    justify-content: space-between;
+    background: #ffffff;
+    border-radius: 0em 0em 1em 1em;
+}
+
+.slider__image-container {
+    max-width: 80vw;
+    max-height: 80vh;
+    overflow: hidden;
+    border-radius: 1em 1em 0em 0em;
+    transition: all .5s ease-in-out;
+}
+
+.slider__image-container .image-container {
+    display: flex;
+    height: 100%;
+    width: 400%;
+    transition: all 1s ease-in-out;
+}
+
+.slider__image-container .slider__elem {
+    width: 100%;
+    height: 100%;
+    padding: 1em 1em 1em 1em;
+    background: rgb(31, 31, 31);
+}
+
+.slider__image-container .slider__elem .slider__mem {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.slider__text-container {
+    padding: 1em 0 1em 1em;
+    overflow: hidden;
+}
+
+.text-container {
+    display: flex;
+    width: 400%;
+    height: 100%;
+    transition: all 1s ease-in-out;
+}
+
+.text {
+    display: flex;
+    width: 100%;
+    height: auto;
+    font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    opacity: 0;
+    color: rgb(0, 0, 0);
+    transition: all .3s ease-in-out;
+}
+
+.slider__switch {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 1em;
+    transition: all .5s ease-in-out;
+}
+
+.slider__switch nav {
+    display: flex;
+    height: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.slider__switch .slider__pagintaion_dot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    width: 3em;
+    height: 3em;
+    transition: all .5s ease-in-out;
+}
+
+.slider__switch .slider__pagintaion_dot .dot {
+    border-radius: 100%;
+    border: .1rem solid #63a4ff;
+    background: transparent;
+    background-color: rgb(255, 255, 255);
+    width: 1.5em;
+    height: 1.5em;
+    transition: all .5s ease-in-out;
+}
+
+.slider__switch .slider__pagintaion_dot:hover>.dot {
+    border: .56rem solid #9cc5ff;
+    transition: all .2s linear;
+}
+
+.slider__switch .slider__pagintaion_dot:active>.dot {
+    border: .56rem solid #2b81f8;
+    transition: all .01s ease-in-out;
+}
+
+#switch1:checked~.slider__image-container .image-container {
+    margin-left: 0%;
+}
+
+#switch2:checked~.slider__image-container .image-container {
+    margin-left: -100%;
+}
+
+#switch3:checked~.slider__image-container .image-container {
+    margin-left: -200%;
+}
+
+#switch4:checked~.slider__image-container .image-container {
+    margin-left: -300%;
+}
+
+#switch1:checked~.info-container .slider__text-container .text-container {
+    margin-left: 0%;
+}
+
+#switch2:checked~.info-container .slider__text-container .text-container {
+    margin-left: -100%;
+}
+
+#switch3:checked~.info-container .slider__text-container .text-container {
+    margin-left: -200%;
+}
+
+#switch4:checked~.info-container .slider__text-container .text-container {
+    margin-left: -300%;
+}
+
+#switch1:checked~.info-container .slider__text-container .text-container .text:nth-child(1),
+#switch2:checked~.info-container .slider__text-container .text-container .text:nth-child(2),
+#switch3:checked~.info-container .slider__text-container .text-container .text:nth-child(3),
+#switch4:checked~.info-container .slider__text-container .text-container .text:nth-child(4) {
+    opacity: 1;
+}
+
+#switch1:checked~.info-container .slider__switch label:nth-of-type(1) .dot,
+#switch2:checked~.info-container .slider__switch label:nth-of-type(2) .dot,
+#switch3:checked~.info-container .slider__switch label:nth-of-type(3) .dot,
+#switch4:checked~.info-container .slider__switch label:nth-of-type(4) .dot {
+    background-color: #77b0ff;
+}
+
+@media screen and (max-width: 720px) {
+    .slider {
+        max-width: 80vw;
+        min-height: 20vh;
+        max-height: 80vh;
+        padding: 1em;
+    }
+    .slider__switch {
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        padding: 3em 1em 1em 1em;
+    }
+    .slider__text-container {
+        width: 100%;
+        text-align: center;
+        padding: 1em;
+    }
+    .text {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+        font-size: 1.8rem;
+        line-height: 2.3rem;
+    }
+    .slider__switch nav {
+        column-gap: 0.2em;
+        align-items: center;
+    }
+    .slider__switch .slider__pagintaion_dot {
+        width: calc(1.5rem + 5vw);
+        height: calc(2.5rem + 5vw);
+    }
+    .slider__switch .slider__pagintaion_dot .dot {
+        width: calc(0.5rem + 5vw);
+        height: calc(0.5rem + 5vw);
+    }
+    .info-container {
+        flex-direction: column-reverse;
+    }
+    .slider__switch .slider__pagintaion_dot .dot {
+        border: .1rem solid #63a4ff;
+    }
+    .slider__switch .slider__pagintaion_dot:hover>.dot {
+        border: 1rem solid #9cc5ff;
+    }
+    .slider__switch .slider__pagintaion_dot:active>.dot {
+        border: 1rem solid #2b81f8;
+    }
+}
+
+@media screen and (min-width: 720px) {
+    .slider {
+        max-width: 80vw;
+        min-height: 20vh;
+        max-height: 80vh;
+        padding: 1em;
+    }
+    .slider__switch .slider__pagintaion_dot {
+        height: 2.5em;
+        width: 2.5em;
+    }
+    .slider__switch .slider__pagintaion_dot .dot {
+        width: 1.5em;
+        height: 1.5em;
+    }
+    .text {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .slider {
+        max-width: 80vw;
+        min-height: 20vh;
+        max-height: 80vh;
+        padding: 1em;
+    }
+    .slider__switch .slider__pagintaion_dot {
+        height: 2.1em;
+        width: 2.1em;
+    }
+    .slider__switch .slider__pagintaion_dot .dot {
+        width: 1.1em;
+        height: 1.1em;
+    }
+    .text {
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .slider {
+        max-width: 80vw;
+    }
+    .slider__switch .slider__pagintaion_dot {
+        height: 2em;
+        width: 2em;
+    }
+    .slider__switch .slider__pagintaion_dot .dot {
+        width: 1em;
+        height: 1em;
+    }
+}
